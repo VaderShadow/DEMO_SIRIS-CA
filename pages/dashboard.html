@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIRIS-CA — Sistema Regional de Inteligencia de Riesgos y Situaciones</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+<div id="sidebar-container"></div>
+<div id="navbar-container"></div>
+
+<div id="dashboard-content">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-box">
+    <div class="logo-icon">SIRIS<br>CA</div>
+    <div class="logo-text">
+      <h1>SIRIS-CA <span>v2.0 DEMO</span></h1>
+      <p>Sistema Regional de Inteligencia de Riesgos y Situaciones • CEPREDENAC</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="status-dot"><div class="dot"></div> EN LÍNEA</div>
+    <div class="clock">
+      <div class="time" id="clock-time">--:--:--</div>
+      <div class="date" id="clock-date">Cargando...</div>
+    </div>
+    <div class="user-badge">
+      <div class="avatar">AN</div>
+      <div>
+        <div style="font-weight:600;">Analista Regional</div>
+        <div style="font-size:8px;color:var(--text-muted);">CEPREDENAC</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  <span style="font-size:15px;">⚠️</span>
+  <span class="badge">ALERTA ACTIVA</span>
+  <span class="msg"><strong>Tormenta Tropical Andrea</strong> — aproximándose a costa caribeña centroamericana. Monitoreo continuo activado.</span>
+  <span class="time-ago"><i class="fas fa-clock"></i> Hace 23 min</span>
+</div>
+
+<!-- METRICS BAR -->
+<div class="metrics-bar" id="metrics-bar">
+  <!-- Populated by JS -->
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-grid">
+
+  <!-- LEFT PANEL: MAP -->
+  <div class="panel">
+    <div class="panel-title" style="justify-content:space-between;">
+      <span>🗺️ Mapa Regional — Semáforo por País</span>
+      <button id="clearFilter" class="filter-btn" style="display:none;" onclick="clearCountryFilter()">✕ Limpiar filtro</button>
+    </div>
+    <div class="map-container">
+      <svg id="regionMap" viewBox="0 0 480 340"></svg>
+    </div>
+    <div class="panel-title" style="font-size:9px;">ESTADO POR PAÍS</div>
+    <div class="country-grid" id="countryGrid"></div>
+    <div class="panel-title" style="font-size:9px;margin-top:6px;">📊 LÍNEA DE TIEMPO — EVENTOS HOY</div>
+    <div class="timeline-chart" id="timeline"></div>
+  </div>
+
+  <!-- CENTER PANEL: EVENTS + PREDICTIVE -->
+  <div class="panel">
+    <div class="tabs">
+      <button class="tab active" data-tab="eventos" onclick="switchTab('eventos')">🔴 Eventos Activos <span class="badge" id="eventCount">8</span></button>
+      <button class="tab" data-tab="predictivo" onclick="switchTab('predictivo')">🔮 Capa Predictiva</button>
+    </div>
+    <div id="tab-eventos" class="event-list"></div>
+    <div id="tab-predictivo" style="display:none;flex:1;overflow-y:auto;"></div>
+  </div>
+
+  <!-- RIGHT PANEL: RECOMMENDATIONS -->
+  <div class="panel">
+    <div class="panel-title">🤖 Recomendaciones IA</div>
+    <div id="recList" style="flex:1;overflow-y:auto;margin-bottom:10px;"></div>
+    <div style="font-size:9px;color:var(--text-muted);font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">ACCIONES RÁPIDAS</div>
+    <div id="actionBtns"></div>
+    <div class="sys-status" style="margin-top:12px;">
+      <div class="sys-title">ESTADO DEL SISTEMA</div>
+      <div id="sysRows"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="copy">SIRIS-CA © 2025 CEPREDENAC • Sistema Regional de Inteligencia de Riesgos y Situaciones</div>
+  <div class="stats">
+    <span>🏛 8 Fuentes Oficiales</span>
+    <span>📡 142 Sensores</span>
+    <span>🛰 3 Satélites</span>
+    <span>🤖 3 Modelos IA</span>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/app.js"></script>
+
+
+</div>
+</body>
+</html>
