@@ -1,0 +1,66 @@
+/* ==========================================
+   SIRIS-CA Design System
+   Theme v1.0
+========================================== */
+
+:root{
+
+    /* Fondo */
+
+    --bg-primary:#0B1220;
+
+    --bg-secondary:#111827;
+
+    --bg-card:#1F2937;
+
+    --bg-hover:#273548;
+
+    /* Texto */
+
+    --text-primary:#F8FAFC;
+
+    --text-secondary:#CBD5E1;
+
+    --text-muted:#94A3B8;
+
+    /* Bordes */
+
+    --border:#243244;
+
+    /* Institucional */
+
+    --primary:#2563EB;
+
+    --primary-light:#3B82F6;
+
+    /* Estados */
+
+    --success:#22C55E;
+
+    --warning:#EAB308;
+
+    --orange:#F97316;
+
+    --danger:#EF4444;
+
+    --info:#06B6D4;
+
+    /* Radios */
+
+    --radius-sm:6px;
+
+    --radius-md:10px;
+
+    --radius-lg:14px;
+
+    /* Sombras */
+
+    --shadow:
+
+        0 6px 16px rgba(0,0,0,.30);
+
+    /* Transiciones */
+
+    --transition:.25s ease;
+
+}

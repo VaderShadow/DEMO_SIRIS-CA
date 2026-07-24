@@ -1,0 +1,82 @@
+/* ==========================================
+   SIRIS-CA
+   Base Styles
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    background:var(--bg-primary);
+
+    color:var(--text-primary);
+
+    font-family:"Inter",sans-serif;
+
+}
+
+body{
+
+    overflow:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:var(--transition);
+
+}
+
+input,
+select,
+textarea{
+
+    font:inherit;
+
+    outline:none;
+
+}
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--border);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg-primary);
+
+}

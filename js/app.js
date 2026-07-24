@@ -10,9 +10,29 @@ function project(lat, lon) {
 }
 
 function updateClock() {
-  const now = new Date();
-  document.getElementById('clock-time').textContent = now.toLocaleTimeString('es-GT',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-  document.getElementById('clock-date').textContent = now.toLocaleDateString('es-GT',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+    const time = document.getElementById("clock-time");
+    const date = document.getElementById("clock-date");
+
+    if (!time || !date) {
+        return;
+    }
+
+    const now = new Date();
+
+    time.textContent = now.toLocaleTimeString("es-GT", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    date.textContent = now.toLocaleDateString("es-GT", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
 }
 
 function renderMetrics() {
@@ -260,16 +280,22 @@ function renderAll() {
 
 updateClock();
 setInterval(updateClock, 1000);
-renderAll();
+/* ==========================
+   DASHBOARD LEGACY DESACTIVADO
+   Será reemplazado por SIRIS-CA v2
+========================== */
 
-// Simulate live updates
-setInterval(()=>{
-  const idx = Math.floor(Math.random()*countries.length);
-  const c = countries[idx];
-  if(Math.random()>0.7) {
-    c.events += 1;
-    c.familias += Math.floor(Math.random()*20);
-    c.evacuados += Math.floor(Math.random()*50);
-    renderMetrics(); renderMap(); renderCountryGrid();
-  }
-}, 8000);
+// renderAll();
+
+// setInterval(()=>{
+//   const idx = Math.floor(Math.random()*countries.length);
+//   const c = countries[idx];
+//   if(Math.random()>0.7) {
+//     c.events += 1;
+//     c.familias += Math.floor(Math.random()*20);
+//     c.evacuados += Math.floor(Math.random()*50);
+//     renderMetrics();
+//     renderMap();
+//     renderCountryGrid();
+//   }
+// },8000);
